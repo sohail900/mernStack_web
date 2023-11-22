@@ -2,7 +2,6 @@
 import { FC, ReactElement, useEffect } from 'react'
 import { FaCopy } from "react-icons/fa6";
 import { MdOutlineDone } from "react-icons/md";
-import { copy, tick } from '../../assets'
 import { loader } from '../../assets'
 const Cards: FC<SumzArticlesType> = ({
     copiedURL,
@@ -32,7 +31,7 @@ const Cards: FC<SumzArticlesType> = ({
                             className='copy_btn'
                             onClick={() => copiedURL(elem)}
                         >
-                             {copied === elem ? <FaCopy /> : <MdOutlineDone />}
+                         {copied === elem ? <MdOutlineDone /> : <FaCopy />}
                         </div>
                         <p className='blue_gradient'>{elem}</p>
                     </div>
