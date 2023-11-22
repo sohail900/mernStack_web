@@ -12,7 +12,7 @@ const App: FC = (): ReactElement => {
                 <div>
                     <Suspense fallback={<Loader />}>
                         <Routes>
-                            <Route path='/home' element={<Hero />} />
+                            <Route path='/' element={<Hero />} />
                         </Routes>
                     </Suspense>
                 </div>
