@@ -32,8 +32,7 @@ const Cards: FC<SumzArticlesType> = ({
                             className='copy_btn'
                             onClick={() => copiedURL(elem)}
                         >
-                        
-                            {copied === elem ? <FaCopy/> : <MdOutlineDone/>}
+                             {copied === elem ? <FaCopy /> : <MdOutlineDone />}
                         </div>
                         <p className='blue_gradient'>{elem}</p>
                     </div>
