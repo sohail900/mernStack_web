@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FC, ReactElement, useEffect } from 'react'
+import { FaCopy } from "react-icons/fa6";
+import { MdOutlineDone } from "react-icons/md";
 import { copy, tick } from '../../assets'
 import { loader } from '../../assets'
 const Cards: FC<SumzArticlesType> = ({
@@ -30,11 +32,8 @@ const Cards: FC<SumzArticlesType> = ({
                             className='copy_btn'
                             onClick={() => copiedURL(elem)}
                         >
-                            <img
-                                src={copied === elem ? tick : copy}
-                                alt='copy'
-                                className='object-contain '
-                            />
+                        
+                            {copied === elem ? (<FaCopy/>) : (<MdOutlineDone/>}
                         </div>
                         <p className='blue_gradient'>{elem}</p>
                     </div>
