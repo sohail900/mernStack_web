@@ -1,0 +1,10 @@
+// vercel.json
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/home"
+    }
+  ]
+}
