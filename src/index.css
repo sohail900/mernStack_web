@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+  Note: The styles for this gradient grid background is heavily inspired by the creator of this amazing site (https://dub.sh) – all credits go to them! 
+*/
+html {
+    font-family: 'Inter', sans-serif;
+}
+.main {
+    width: 100vw;
+    min-height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    padding: 120px 24px 160px 24px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.main:before {
+    background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+    content: '';
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.main:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.4;
+    filter: invert(1);
+}
+
+.gradient {
+    height: fit-content;
+    z-index: 3;
+    width: 100%;
+    max-width: 640px;
+    background-image: radial-gradient(
+            at 27% 37%,
+            hsla(215, 98%, 61%, 1) 0px,
+            transparent 0%
+        ),
+        radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+        radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+        radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    filter: blur(100px) saturate(150%);
+    top: 80px;
+    opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+    .main {
+        padding: 0;
+    }
+}
+.or-sec {
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+    position: relative;
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.596);
+}
+.or-sec::before {
+    content: '';
+    width: 46%;
+    height: 2px;
+    display: block;
+    background: #a5a5a556;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 30px;
+}
+.or-sec::after {
+    content: '';
+    width: 46%;
+    height: 2px;
+    display: block;
+    background: #a5a5a556;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 30px;
+}
+.errorMsg {
+    position: fixed;
+    top: 3rem;
+    text-align: center;
+    width: fit-content;
+    padding: 0.7rem 1.5rem;
+    background-color: #f10101e5;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.showError {
+    right: 5rem;
+    transition: right 500ms ease-in-out;
+}
+.hideError {
+    right: -450rem;
+    transition: right 1000ms ease-in-out;
+}
+.btn_linked {
+    display: flex;
+    justify-content: center;
+    padding: 0.35rem 0.8rem;
+    border-radius: 30px;
+    background-color: #000000;
+    color: #fff;
+}
+.btn_linked .btn_divider {
+    width: 2px;
+    background-color: #ffffff81;
+    display: block;
+    border-radius: 30px;
+    margin: 0rem 0.5rem;
+}
+.btn_linked .btn_child {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+.btn_linked > .btn_child:hover {
+    opacity: 0.7;
+}
+/* Tailwind Styles */
+
+.app {
+    @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+}
+
+.black_btn {
+    @apply rounded-full border border-black bg-black py-1.5 px-5 text-sm text-white transition-all hover:bg-white hover:text-black;
+}
+
+.head_text {
+    @apply mt-5 text-[3rem] font-extrabold leading-[1.20] text-black text-center font-satoshi lg:text-[3rem];
+}
+.orange_gradient {
+    @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
+}
+.form_button {
+    @apply bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-300 mt-[0.5rem] py-[0.4rem] rounded-md cursor-pointer text-[#fff] font-medium text-[1rem] disabled:bg-none disabled:bg-[#bcc5c7de] disabled:cursor-default  transition ease-in-out hover:shadow-lg   hover:bg-gradient-to-l;
+}
+
+.desc {
+    @apply mt-4  text-gray-600 text-[1rem] text-center max-w-2xl sm:text-[1.1rem] px-4;
+}
+
+.url_input {
+    @apply w-full  mt-[2rem] rounded-md border border-gray-200 bg-white py-[0.60rem]  pl-[2.8rem] pr-[4rem]  shadow-lg outline-none  font-medium flex items-center gap-4 focus:border-gray-500 focus:border-r-gray-500  active:outline-none text-[1rem] text-[#07180a];
+}
+.submit_btn {
+    @apply hover:border-gray-700 hover:text-gray-700 flex w-[3rem] absolute right-2 top-[2.45rem]  items-center justify-center rounded border text-[1.3rem]  border-gray-200 h-[31px] text-gray-400;
+}
+
+.link_card {
+    @apply pl-3 py-[0.4rem] sm:w-[580px] w-full  flex items-center bg-white border border-gray-200 gap-3 rounded-lg;
+}
+
+.copy_btn {
+    @apply sm:p-[0.5rem] p-[0.2rem] rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.3)] backdrop-blur flex justify-center items-center cursor-pointer cursor-pointer;
+}
+
+.blue_gradient {
+    @apply font-medium  bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent  overflow-hidden text-ellipsis whitespace-nowrap text-[0.9rem] text-[0.9rem] cursor-pointer;
+}
+
+.summary_box {
+    @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-4 mb-20 leading-[1.8rem];
+}
+.social_media {
+    @apply flex items-center  py-[0.5rem] px-[0.7rem] bg-[#e7e7e796] rounded hover:shadow-md hover:transition-all cursor-pointer;
+}
